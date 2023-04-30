@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        background-color:#F4F6F0;
+        color: #82cf77;
+        font-family:'IBM Plex Sans', sans-serif;
+        font-size: 1rem;
+        min-height: 100%;
+    }
+
+    .grid-container-primary > * {
+        box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
+        border-radius: 4px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .navbar {
+        grid-area: navbar;
+        background-color: #7743D4;
+    }
+
+    .header {
+        grid-area: header;
+        background-color: #F4F6F0;
+    }
+
+    .section {
+        grid-area: section;
+        background-color: #F4F6F0;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        background-color: #ffffff;
+    }
+
+    .footer {
+        grid-area: footer;
+        background-color: #7743D4;
+    }
+
+    .grid-container-primary {
+        display: grid;
+        gap: 5px;
+        grid-template-areas:
+        "header"
+        "navbar"
+        "main"  
+        "sidebar"
+        "footer";
+    }
+ 
+    @media (min-width: 600px) {
+        .grid-container-primary {
+            grid-template:
+            "header header" 200px
+            "navbar navbar" 50px
+            "main   sidebar" auto
+            "footer footer" 100px / auto 250px;
+        }
+    }
+
+    @media (min-width: 900px) {
+        .grid-container-primary{
+            grid-template:
+            "header header header"  200px
+            "navbar  main   sidebar" auto
+            "footer footer footer"  100px / 150px  auto  250px;
+        }
+    }
